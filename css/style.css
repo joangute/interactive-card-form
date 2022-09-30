@@ -1,0 +1,269 @@
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: hsl(278, 68%, 11%);
+  font-weight: 500;
+  font-size: 1.125rem;
+  min-height: 100vh;
+  display: flex;
+  background: url("../images/bg-main-desktop.png") no-repeat left;
+  background-size: 33.47vw 100%;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 11.39vw;
+  align-items: center;
+  gap: 1.875rem;
+  width: 100%;
+}
+
+p{
+  display: none;
+}
+.logo{
+  height: 100%;
+}
+.card{
+  display: grid;
+  gap: 4.11vh;
+  align-content: center;
+  color: white;
+  font-size: 1.56vh;
+  letter-spacing: 0.22vh;
+}
+
+.card-front{
+  background: url("../images/bg-card-front.png") no-repeat left;      
+  padding: 2.78vh;
+  grid-template-rows: 24.92% auto 24.92%;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_name{
+  text-transform: uppercase;
+}
+
+.card_number{
+  font-size: 3.11vh;
+  letter-spacing: 0.44vh;
+}
+
+.card-back{
+  background: url("../images/bg-card-back.png") no-repeat right;      
+  justify-self: end;
+  grid-template-rows: 51.43 auto;      
+}
+
+.card-front,
+.card-back{
+  border-radius: 0.5rem;
+  background-size: cover;
+  height: 27.22vh;
+  width: calc(27.22vh * 1.824);
+  display: grid;
+  align-items: end;
+  box-shadow: 0 3rem 3rem hsla(278, 68%, 11%,.1);
+}
+
+.cvc{
+  margin-right: 6.56vh;
+  justify-self: end;
+}
+
+.form{
+  padding: 0 4.51vw 0 6.6vw;
+}
+
+form{
+  display: grid;
+  gap: 2.89vh;
+}
+
+label{
+  color: inherit;
+  margin-bottom: 0.89vh;
+  text-transform: uppercase;
+  font-size: 1.33vh;
+  letter-spacing: 0.22vh;
+  display: block;
+}
+
+input,
+#confirm{
+  font-size: inherit;
+  font-family: inherit;
+  box-sizing: inherit;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+input{
+  border: 1px solid hsl(270, 3%, 87%);
+  padding: 1.33vh 1.78vh;
+  outline: none;
+  width: 100%;
+}
+
+::placeholder{
+  color: hsl(270, 3%, 87%);
+}
+
+#confirm{
+  border: none;
+  color: white;
+  background: hsl(278, 68%, 11%);
+  padding: 2vh;
+  margin-top: 1.56vh;
+}    
+
+.split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2.22vh;
+}
+
+input:focus{
+  border: 1px solid hsl(249, 99%, 64%);
+  outline: 1px solid hsl(278, 94%, 30%);
+}   
+
+.error_border{
+  border: 1px solid hsl(0, 100%, 66%);
+  outline: 1px solid hsl(0, 100%, 66%);
+}
+
+.error_message{
+  color: hsl(0, 100%, 66%);
+  font-size: 1.33vh;
+  margin: 0.67vh 0 0;
+  display: block;
+}
+
+.success{
+  text-align: center;
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 0.56vh;
+  font-size: 2.78vh;
+  margin-top: 1.5rem;
+}
+
+#continue{
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: white;
+  background: hsl(278, 68%, 11%);
+  padding: 2vh;
+  margin-top: 3.5rem;
+}
+
+.success p{
+  display: block;
+  color: hsl(279, 6%, 55%);
+  font-size: 2vh;
+  margin: 0;
+}    
+
+@media (max-width: 1024px){
+  body{
+    background: url("../images/bg-main-mobile.png") no-repeat top;
+    background-size: 100% 50vw;
+  }
+  main{
+    margin: 10vw 15vw;
+    grid-template-columns: unset;
+    gap: 0;
+    align-content: start;
+  }
+  .card{
+    grid-template-rows: repeat(2, 17vw) ;
+    font-size: 1.7vw;
+    gap: 0;
+  }
+  .card_number{
+    font-size: 3.5vw;
+    letter-spacing: 0.4vw;
+  }
+  .card-back{
+    grid-row: 1;
+    z-index: 0;
+  }
+  .card-front{
+    z-index: 1;
+  }
+  .card-front,
+  .card-back{
+    height: 30vw;
+    width: calc(30vw * 1.824);
+    box-shadow: 0 3rem 3rem hsla(278, 68%, 11%,.1);
+  }
+  form,
+  .success{
+    margin-top: 25vw;
+  }
+}
+
+@media (max-width: 480px){
+  body{
+    background-size: 100% auto;
+  }
+  main{
+    margin: 8.53vw 4.27vw;
+  }
+  .form{
+    padding: 0 2.13vw;
+  }
+  form,
+  .success{
+    margin-top: 33.33vw;
+  }
+  label{
+    font-size: 3.2vw;
+  }
+  input{
+    padding: 2.67vw 4.27vw;
+  }
+  .card{
+    grid-template-rows: repeat(2, 23.7vw) ;
+    font-size: 2.67vw;
+  }
+  .card-front{
+    padding: 4.8vw;
+  }
+  .card-front,
+  .card-back{
+    height: 41.87vw;
+    width: calc(41.87vw * 1.824);
+    box-shadow: 0 3rem 3rem hsla(278, 68%, 11%,.1);
+  }     
+  .logo img{
+   height: 8.27vw;
+  }
+  #confirm{
+    margin: 0;
+    padding: 3.73vw 0;
+  }
+  .card_number{
+    font-size: 5.07vw;
+    letter-spacing: 0.53vw;
+  }
+}
